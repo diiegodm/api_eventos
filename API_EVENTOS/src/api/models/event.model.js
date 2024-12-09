@@ -10,7 +10,7 @@ const userSchema = new Schema(
         descripcion: { type:String, require: true},
         fecha:{ type:Date, require: true },
         ubicacion: { type:String,require: true},
-        tipoDeporte: { type:String,require: true},
+        tipoDeporte: {type:String,require: true},
         organizador: { type:String,require: true}
       }, {
         collection: "events",

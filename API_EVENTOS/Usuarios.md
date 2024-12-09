@@ -1,5 +1,10 @@
 # API Usuarios
 
+## funcionamiento
+
+- esta API nos proporcia los evetos que estan programados en diferentes localidades, distintas fechas y sus diferentes disiplinas.
+
+
 ## enlaces usados en la api usuarios
 
 URL: /api/users/register
@@ -25,6 +30,19 @@ MÉTODO: put
 URL: /api/users/register
 MÉTODO: POST
 BODY: name, username, password,evento
+
+- los usuaros deberen registrarse llenado los siguientes datos:
+```js
+  {
+        name: 
+        username: 
+        password:  
+        evento:  
+        
+    }
+```
+
+- si el registro es exitoso.
 
 Respuesta:
 
@@ -57,12 +75,32 @@ los datos que se almacenaran en la data--
 }
 
 ```
+- en caso de que el username ya fuese registrado antes nos arrojara:
+
+```js
+{
+  "mensaje": "el user name ha sido registrado",
+    
+}
+
+```
 
 ## hacer un login 
 
 URL: /api/users/login
 MÉTODO: post
 
+- los usuarios debera proporciuonar los siguientes datos 
+
+
+```js
+{
+  
+        "username": "diiego arevalo",
+        "evento": "futbol "
+}
+
+```
 Respuesta:
 
  Respuesta al usuario, es lo que vera el usuario
@@ -86,9 +124,13 @@ HEADERS: req.params.id
 
 se buscara e indentificara individualmente por el ID
 
+```js
+ URl = http://localhost:3400/api/users/update/6756227af22f3491e9814eba
+
+ ```
 Respuesta:
 
-- Un array con un json si el token no existe(no ha iniciado sesion)
+- Un array con un json si el token no existe (no ha iniciado sesion)
 
 ```js
  {"message":" debe incluir un token"}
@@ -116,7 +158,7 @@ Respuesta:
 
 
 
-## Actualización completa de unusuario solo por admin
+## Actualización completa de un usuario (solo por admin)
 
 URL: /api/users/updste/:id
 MÉTODO: put
@@ -127,10 +169,25 @@ HEADERS: req.params.id
 
 se buscara e indentificara individualmente por el ID
 
+
+```js
+ URl = http://localhost:3400/api/users/update/6756227af22f3491e9814eba
+```
+
 BODY: name, username, password, evento, role
 
 req.body -> Datos para la actualización
 
+
+```js
+ {
+        "name": "diego arevalo",
+        "username": "diiego arevalo",
+        "role": 1,
+        "createdAt": "2024-12-06T19:12:14.337Z",
+        "updatedAt": "2024-12-06T23:26:18.455Z"
+    }
+```
 Respuesta:
 
 
@@ -181,6 +238,10 @@ HEADERS: X
 HEADERS: req.params.id
 
 se buscara e indentificara individualmente por el ID
+
+```js
+ URl = http://localhost:3400/api/users/update/6756227af22f3491e9814eba
+```
 
 Respuesta:
 

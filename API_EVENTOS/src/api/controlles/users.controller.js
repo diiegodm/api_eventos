@@ -10,17 +10,19 @@ const registrer = async (req, res) => {
 
   try {
     console.log('endpoint registrer');
-    debugger;
+   
     const newUser = req.body;// recibimos los datos desde el body 
 
     const userDB = await Users.find({ username: newUser.username });// buscamos el username como principal y unico elemento (KEY)
     if (userDB.length !== 0) {
 
-      return res.json({ message: "el usuario ya esta registrado" });// en caso de que el username ya este usado 
+      return res.status(201).json({ message: "el usuario ya esta registrado" });// en caso de que el username ya este usado 
     };
     newUser.password = await bcrypt.hash(newUser.password, 10);
     const user = await Users.create(newUser);
-console.log (user)
+
+
+
     const data = {
       name: user.name,
       username: user.username,
@@ -28,31 +30,31 @@ console.log (user)
 
     }
 
-    return res.json({ mensaje: "te haz registrado con exito", data })
+    return res.status(201).json({ mensaje: "te haz registrado con exito", data })
 
 
   } catch (error) {
-    return res.json(error)
+    return res.status(500).json(error)
   }
 }
-
+ 
 const login = async (req, res) => {
   try {
     //recibo los datos
     const { username, password } = req.body;
-    //verificar que el email existe findOne
-    //const userDB = await Users.findOne({ email: req.body.email })
+    
+   
     const userDB = await Users.findOne({ username });
-
+ 
     if (!userDB) {
-      return res.json({ message: "el eusuario no existe" })
+      return res.status(400).json({ message: "el eusuario no existe" })
     }
     //comparar la contraseña del usuario con la de la BD  bcrypt.compare()
-    const same = await bcrypt.compare(password, userDB.password)
+    const same = await bcrypt.compare(password, userDB.password) 
 
     //no coinciden la contraseña envio mensaje de  error
     if (!same) {
-      return res.json({ message: "Contraseña incorrecta" })
+      return res.status(401).json({ message: "Contraseña incorrecta" })
     }
     //si coinciden creo el token
     token = createToken(userDB);
@@ -60,7 +62,7 @@ const login = async (req, res) => {
 
 
     // mostrare el token por consaola para no mostrarcelo a usuario 
-    return res.json({
+    return res.status(200).json({
       message: " felicidades Login exitoso",
       token: createToken(userDB)
 
@@ -79,7 +81,7 @@ const deleteuser = async (req, res) => {
 
     if (!deleteUser) {
 
-      return res.json({ mensaje: "el usuario no existe" })
+      return res.status(400).json({ mensaje: "el usuario no existe" })
     }
 
     const Evento = {
@@ -93,13 +95,13 @@ const deleteuser = async (req, res) => {
 
     }// devolvera solo  los datos que el usuario vera de forma limpia (eso espero
 
-    return res.json({
+    return res.status(200).json({
       mensaje: "usuario eliminado con exito",
       Evento
     })
 
   } catch (error) {
-    console.log(error)
+    return res.status(500).json(error)
   }
 
 }
@@ -127,7 +129,7 @@ const profile = async (req, res) => {
 
 
   } catch (error) {
-    console.log(error)
+    return res.status(500).json(error)
   }
 }
 
@@ -149,7 +151,7 @@ const update = async (req, res) => {
 
 
         if (!newUser) { // si no encuentra el usuaripo devolvera el error  
-          return res.status(404).json({ mensaje: "Usuario no encontrado" });
+          return res.status(400).json({ mensaje: "Usuario no encontrado" });
       }
         const newusermodificado = {
           name: newUser.name,
@@ -162,14 +164,14 @@ const update = async (req, res) => {
         }
 
 
-        return res.json({
+        return res.status(200).json({
           mensaje: "se modifico con exito",
           newusermodificado
         })
 
 
       }catch (error) {
-        console.log(error)
+        return res.status(500).json(error)
 
       }
     }
