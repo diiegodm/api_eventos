@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    width: 150px;
+}
+/* flex */
+.menu{
+    list-style: none;
+    height: 50px;
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+    /* eje principal --> horizontal - X*/
+    justify-content:space-around;
+    /* space-between , center*/ 
+
+    /* eje secundario --> ventical - Y */
+    align-items:center;/*start, end, center */
+}
+.menu a{
+    text-decoration: none;
+    color: black;
+}
+.header{
+    display: flex;
+    justify-content:space-around;
+}
+.imgArt{
+    width: 100px;
+}
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;/* column, row-reverse*/
+}
+.artic{
+    display: flex;
+    flex-direction: row; /*eje principal --> X */
+    align-items: center;
+    width: 50%;
+}
+.articulo2{
+    order: 0;
+}
+.articulo1{
+    order: 1;
+}
+.articulo3{
+    order: 2;
+}

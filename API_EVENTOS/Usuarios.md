@@ -5,6 +5,10 @@
 - esta API nos proporcia los evetos que estan programados en diferentes localidades, distintas fechas y sus diferentes disiplinas.
 
 
+
+
+
+
 ## enlaces usados en la api usuarios
 
 URL: /api/users/register
@@ -272,3 +276,26 @@ Respuesta:
 - [x] Desde api.routes.js mandamos todas las peticiones que empiezan por /api/users al fichero anterior
 - Generar el controlador, los métodos necesarios y las rutas en el fichero users.routes.js
 
+
+adjunto los documentos necesrios para hacer la prueva  de rutas...
+usuario administrador...
+```js
+{
+  "username": "admint",
+  "password": "admint"
+}
+```
+usuario no administrador...
+```js
+{
+  "username": "diegoo arevalo",
+  "password": "1234"
+}
+```
+
+archivos del .env
+ PORT = 3400
+ 
+ DB_URL= mongodb+srv://diegoarevalodm:QyM3DtxWuKJDz61E@cluster0.rk7w2.mongodb.net/Eventos?retryWrites=true&w=majority&appName=Cluster0
+ 
+ PASSW = CASAS

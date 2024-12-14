@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="https://e7.pngegg.com/pngimages/277/446/png-clipart-rick-and-morty-illustratrion-rick-sanchez-morty-smith-rick-and-morty-season-1-television-show-youtube-rick-and-morty-television-logo.png" alt="logo"/>
+        </div>
+        <navbar class="navbar">
+            <ul class="menu">
+                <li class="menu-item active"><a href="#">Inicio</a></li>
+                <li class="menu-item"><a href="#">Blog</a></li>
+                <li class="menu-item"><a href="#">Contacto</a></li>
+            </ul>
+        </navbar>
+        <div class="header-buttons">
+            <i class="shopping-list fa-solid fa-cart-shopping" id="toggleShoppingListBtn"></i>
+        </div>
+    </header>
+    <div id="shoppingListContainer" class="shopping-list-container">
+        <div class="w-100">
+            <h4 class="title">Tu carrito sideral</h4>
+            <table id="shoppingList" class="shopping-list-table">
+                <thead>
+                    <tr>
+                        <th class="w-50">Item</th>
+                        <th>€</th>
+                        <th>Nº</th>
+                        <th>Total</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <div class="shopping-list-total">
+                TOTAL: <span id="totalPrice">0€</span>
+            </div>
+            <div class="container">
+                <button id="doOrderBtn">Comprar</button>
+            </div>
+        </div>
+    </div>
+    <div id="charactersContainer" class="character-container container">
+    </div>
+</body>
+</html>

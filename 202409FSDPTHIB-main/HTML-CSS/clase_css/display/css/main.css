@@ -1,0 +1,41 @@
+.header{
+    background-image: url("../images/123.png") ;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% 100%;
+    height: 300px;
+
+}
+
+main{
+    width: 80%;
+    background-color: lightblue;
+}
+
+.menu{
+    padding: 0;
+    /*margin:20px;
+    margin-left: 0;*/
+    margin: 20px 0;
+}
+
+.menu li{
+    display: inline;
+    margin-right: 15px;
+}
+
+.menu a{
+    display: inline-block;/*pone a los elelemntos en linea, y permite cambiar su tamaño */
+    text-decoration: none;
+    color:black;
+    background-color: rgb(11, 100, 100);
+    border-radius: 5px;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.pet{
+    width: 300px;
+    height: 200px;
+}

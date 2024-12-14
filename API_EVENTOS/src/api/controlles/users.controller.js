@@ -124,7 +124,7 @@ const profile = async (req, res) => {
 
     }// devolvera solo  los datos que el usuario vera de forma limpia (eso espero)
 
-    return res.json(Evento)
+    return res.estatus(200).json(Evento)
 
 
 

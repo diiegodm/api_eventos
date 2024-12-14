@@ -1,0 +1,58 @@
+/*html{
+    font-family: "Roboto";
+}
+*/
+/* carcateristicas que deben aplicara  rodo el documento, definicion de variables*/
+:root{
+    font-family: "Roboto";
+}
+@font-face {
+    font-family: "handlee" ;
+    src: url("../font/Handlee-Regular.ttf");
+}
+body {
+    background-color: cadetblue;
+}
+main {
+    height: 100vh;
+}
+.title{
+    font-weight: 900 ;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.publi{
+  font-family: "handlee" ;
+}
+.icon{
+    color: chartreuse;
+    font-size: 30px;
+}
+.icon:hover{
+    color: chocolate;
+    font-size: 32px;
+    background-color: white;
+}
+/*.link{
+    display: inline-block; 
+    margin: 5px;
+}*/
+.redes li{
+    display: inline-block; 
+    margin: 5px;
+}
+/* hover--> accion a realizar pasar el mouse en un elemento*/ 
+
+.link:visited{
+    color: purple;
+}
+.content{
+    background-color: aqua;
+    display: inline-block;
+    width: 65%;
+}
+.aside{
+    background-color: lightgray;
+    width: 30%;
+    display: inline-block;
+}

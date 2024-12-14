@@ -1,0 +1,48 @@
+@keyframes bajar {
+    from{
+        transform: translateY(-200px);
+        
+    }
+    to{
+       transform: translateY(0px);
+       
+    }
+    
+}
+
+header{
+    height: 30vh;
+    background-color: bisque;
+
+    h1{
+        animation:  bajar 1s 1;
+    }
+
+    .menu{
+        border: 1px solid red;
+
+        h3{
+            background-color:grey ;
+            display: inline;
+            transition: background-color 3s ease-in, color 2s ease-out, font-size 0.5s linear ;
+            /* 
+            transition: all 3s linear;
+            ease-in, ease-in-out, ease*/
+            /*transition: background-color 3s;*/
+        }
+        h3:hover{
+            background-color: black;
+            color:white;
+            font-size: 15px;
+        }
+    }
+}
+
+.desplegable{
+    display: none;
+}
+.hamburguer:hover {
+    .desplegable {
+        display: block;
+    }
+} 

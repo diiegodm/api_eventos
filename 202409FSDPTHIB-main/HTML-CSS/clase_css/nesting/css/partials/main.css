@@ -1,0 +1,9 @@
+.main h2{
+    color: blue;
+    transform: rotate(-30deg);
+    transition: all 3s;
+}
+
+.main h2:hover{
+    transform: rotate(30deg);
+}

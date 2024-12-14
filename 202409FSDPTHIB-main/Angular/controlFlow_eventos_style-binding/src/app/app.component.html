@@ -1,0 +1,108 @@
+<div class="app-container">
+  <header class="content">
+    <h2>Eventos, Binding & ControlFlow</h2>
+    <label class="switch">
+      <input type="checkbox" />
+      <span class="slider" (click)="toggleTheme()"></span>
+    </label>
+  </header>
+
+
+  <!-- Property Binding ([])
+        [] se utiliza para el binding unidireccional desde el componente hacia la vista. Permite enlazar una propiedad de un componente con un atributo de un elemento HTML en la vista. -->
+  <!-- Event Binding (())
+         () se utiliza para escuchar eventos en la vista y enviar las interacciones del usuario hacia el componente. Permite enlazar un evento (como click, input, mouseover, etc.) a un método o función en el componente. -->
+
+  <main>
+    <div class="card">
+      <h3>Evento Click</h3>
+      <p class="description"><em>Se dispara al hacer clic en el elemento.</em></p>
+      <p>Haz clic aquí para probar un evento de click.</p>
+      <button (click)="handleClick()">click</button>
+    </div>
+
+    <div class="card">
+      <h3>Evento Change</h3>
+      <p class="description"><em>Se dispara al cambiar el valor de un campo.</em></p>
+
+      <select (change)=" handleChange( $event)">
+        <option value="" disabled selected>cual es tu deporte favorito</option>
+        <option value="futbol">futbol</option>
+        <option value="basketc">basketc</option>
+        <option value="balonmano">balon mano</option>
+      </select>
+      <p>Seleccionaste: {{selectValue}}</p>
+    </div>
+
+    <div class="card">
+      <h3>Evento Input</h3>
+      <p class="description"><em>Se dispara cada vez que el usuario escribe algo.</em></p>
+      <input type="text" (input)="handleInput($event)" placeholder="Escribe algo..." />
+      <p>Valor: {{inputValue}} </p>
+    </div>
+
+    <div class="card">
+      <h3>Evento Mouseover</h3>
+      <p class="description"><em>Se dispara al pasar el ratón sobre el elemento.</em></p>
+      <p (mouseover)="handleMouseOver()">Pasa el ratón por encima para probar este evento.</p>
+    </div>
+
+    <div class="card">
+      <h3>Evento Keydown</h3>
+      <p class="description"><em>Se dispara al presionar una tecla.</em></p>
+      <input type="text" (keydown)="handleKeydown($event)" placeholder="Presiona una tecla" />
+      <p> {{palabra}} </p>
+    </div>
+
+
+    <!-- El control flow en Angular se refiere al manejo de la lógica condicional y de repetición en las vistas, utilizando directivas estructurales como:
+        @if: Se usa para mostrar u ocultar elementos del DOM basado en una condición booleana.
+        @for: Permite iterar sobre una colección y renderizar un elemento del DOM por cada ítem. -->
+    <div>
+      <h3>Ejemplos de Control Flow</h3>
+      <div>
+        <p>Estos ejemplos incluyen &#64;If, &#64;For y más.</p>
+      </div>
+    </div>
+    <div class="control-flow">
+
+     
+
+      @for (character of charactersList; track character.id; let idx = $index) {
+
+        <div class="card">
+
+          <h2>{{character.name}}</h2>
+
+          <img src="{{character.image}}" alt="{{character.name}}">
+
+          <button (click)="handEliminar(idx)">eliminar</button>
+          
+        </div>
+      }@empty {
+        <h2>no hay personajes </h2>
+      } 
+<div>
+      
+      @for (persona of personas; track persona.nombre){
+
+        @if(persona.edad >= 10){
+
+        <h3>{{persona.nombre}}</h3>
+        <h3>la persona tiene: {{persona.anosExperiencia}} anos de experiencia </h3>
+        }
+
+
+
+
+        @if (persona.nombre.length > 1){
+          <h3>el nombre tiene mas de 5 letras </h3>
+        }
+
+
+      }
+      </div>
+    </div>
+
+  </main>
+</div>

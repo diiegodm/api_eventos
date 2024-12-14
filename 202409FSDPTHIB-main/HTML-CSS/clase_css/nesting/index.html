@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario</title>
+    <link rel="stylesheet" href="./css/styles.css" />
+
+</head>
+
+<body>
+    <header>
+        <h1>Pagina de formularios</h1>
+        <nav class="menu">
+            <h2 class="hamburguer">Hamburguesa
+                <p class="desplegable">desplegable</p>
+            </h2>
+            <h3>contacto</h3>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h2>Contactanos</h2>
+        <form action="send.html" class="form">
+            <div class="div">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" placeholder="Maricarmen" name="name" />
+            </div>
+
+            <div>
+                <label for="lastname">Apellido</label>
+                <input type="text" id="lastname" placeholder="Ruiz" name="lastname" />
+            </div>
+
+            <div>
+                <label for="country">Pais</label>
+                <select name="" id="country">
+                    <option value="">Selecciona</option>
+                    <option value="es">España</option>
+                    <option value="pt">Portugal</option>
+                    <option value="fr">Francia</option>
+                </select>
+            </div>
+
+
+            <!-- seleccion simple,  una unica respuesta para la pregunta-->
+            <div>
+                <label for="">Tienes mascotas</label>
+                <label for="">si</label>
+                <input type="radio" name="pet" id="" value="si" />
+                <label for="">no</label>
+                <input type="radio" name="pet" id="" value="no" />
+            </div>
+
+            <div>
+                <label for="">¿Que quiero obtener del bootcamp?</label>
+                <div>
+                    <input type="checkbox" name="" id="" value="1" />
+                    <label for="">Convertirme en programador</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="" value="2" />
+                    <label for="">Reforzar conocimientos</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="" value="3" />
+                    <label for="">Ganar mas dinero</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="" id="" value="4" />
+                    <label for="">Trabajar desde casa</label>
+                </div>
+            </div>
+
+            <div>
+                <input type="password" name="" id="" placeholder="Ajjhyy1.m" />
+            </div>
+            <div>
+                <input type="email" name="" id="" placeholder="email@example.com" />
+            </div>
+            <div>
+                <input type="date" name="" id="" />
+                <input type="time" name="" id="" />
+                <input type="month" name="" id="" />
+            </div>
+            <div>
+                <input type="color" name="" id="" />
+            </div>
+
+            <div>
+                <input type="file" name="" id="" />
+            </div>
+
+            <input type="submit" value="Registrar" class="btn" />
+            <input type="reset" value="borrar" />
+
+            <!-- type= submit, reset, button-->
+            <button class="btn" type="button">
+                LOGIN
+            </button>
+        </form>
+    </main>
+
+    <footer class="footer">
+        <h2>copy@</h2>
+        <small class="text">hecho por dayana</small>
+        <i class="fa-brands fa-instagram"></i>
+    </footer>
+
+</body>
+
+</html>
